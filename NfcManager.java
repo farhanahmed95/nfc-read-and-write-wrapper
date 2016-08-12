@@ -155,7 +155,7 @@ public class NfcManager {
     }
     /*Call this method on activity 'onNewIntent' method*/
     public void onNewIntent(Intent intent){
-        if (intent!= null && NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction()) )
+        if (intent!= null && (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction()) || NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) )
         {
             nfcIntent = intent;
             logDebug("New Action "+intent.getAction());
